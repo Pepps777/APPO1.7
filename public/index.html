@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>APPO Familienkalender</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div>
+      <h1>APPO Familienkalender</h1>
+      <p>Gemeinsam planen. Gemeinsam informiert.</p>
+    </div>
+
+    <button id="refreshButton" class="secondary-button">
+      ↻ Aktualisieren
+    </button>
+  </header>
+
+
+  <main class="container">
+
+    <!-- Kalender-Navigation -->
+    <section class="calendar-header">
+
+      <button id="previousMonth" class="nav-button">
+        ←
+      </button>
+
+      <h2 id="monthTitle">
+        Kalender
+      </h2>
+
+      <button id="nextMonth" class="nav-button">
+        →
+      </button>
+
+    </section>
+
+
+    <!-- Kalender -->
+    <section class="calendar">
+
+      <div class="weekdays">
+        <div>Mo</div>
+        <div>Di</div>
+        <div>Mi</div>
+        <div>Do</div>
+        <div>Fr</div>
+        <div>Sa</div>
+        <div>So</div>
+      </div>
+
+      <div id="calendarDays" class="calendar-days">
+        <!-- Wird automatisch mit JavaScript gefüllt -->
+      </div>
+
+    </section>
+
+
+    <!-- Neuer Termin -->
+    <section class="event-section">
+
+      <h2>Neuen Termin hinzufügen</h2>
+
+      <form id="eventForm">
+
+        <div class="form-group">
+          <label for="eventTitle">
+            Titel
+          </label>
+
+          <input
+            id="eventTitle"
+            type="text"
+            placeholder="z. B. Arzttermin"
+            required
+          >
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="eventDate">
+              Datum
+            </label>
+
+            <input
+              id="eventDate"
+              type="date"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="eventTime">
+              Uhrzeit
+            </label>
+
+            <input
+              id="eventTime"
+              type="time"
+            >
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="eventPerson">
+              Person
+            </label>
+
+            <select id="eventPerson">
+
+              <option value="">
+                Alle
+              </option>
+
+              <option value="Papa">
+                Papa
+              </option>
+
+              <option value="Mama">
+                Mama
+              </option>
+
+              <option value="Kind">
+                Kind
+              </option>
+
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="eventCategory">
+              Kategorie
+            </label>
+
+            <select id="eventCategory">
+
+              <option value="Termin">
+                Termin
+              </option>
+
+              <option value="Schule">
+                Schule
+              </option>
+
+              <option value="Info">
+                Info
+              </option>
+
+              <option value="FC Basel">
+                FC Basel
+              </option>
+
+              <option value="Speziell">
+                Speziell
+              </option>
+
+            </select>
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="eventInfo">
+            Beschreibung
+          </label>
+
+          <textarea
+            id="eventInfo"
+            rows="3"
+            placeholder="Weitere Informationen..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="primary-button"
+        >
+          + Termin speichern
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- Termine -->
+    <section class="events-section">
+
+      <h2>Termine</h2>
+
+      <div id="eventList">
+        <p class="empty">
+          Termine werden geladen...
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>
+      APPO Familienkalender
+    </p>
+  </footer>
+
+
+  <script src="/app.js"></script>
+
+</body>
+</html>
